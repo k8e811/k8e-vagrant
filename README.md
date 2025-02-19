@@ -23,9 +23,8 @@ Vagrant box with wireguard, openvpn and GUI
 * Extract VPN profile and passcode from Proton (Or other provider)
 * Put passcode and config in directory that becomes /vagrant directory
 * Import an existing config
-* Set perms to global afterwards
-* Will need 'sudo route delete default eth0'
-* May need 'sudo route add default <public network gateway>'
+* Click on people icon on password and select store password for all users
+* Use ```sudo nmcli connection modify $iface ipv4.route-metric 0``` so it can get out because the virtualbox stuff has a priority of zero for the NATed interface
 
 ### Wireguard
 

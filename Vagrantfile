@@ -7,7 +7,7 @@
 # you're doing.
 #
 # Grab the name of the default interface
-$default_network_interface = `ip route | awk '/^default/ {printf "%s", $5; exit 0}'`
+#$default_network_interface = `ip route | awk '/^default/ {printf "%s", $5; exit 0}'`
 Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-      config.vm.network "public_network", bridge: "#$default_network_interface"
+  config.vm.network "public_network"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -93,7 +93,7 @@ Vagrant.configure("2") do |config|
   export DEBCONF_NONINTERACTIVE_SEEN="true"
   apt-get update
   apt-get install -y -qq zstd lxqt task-xfce-desktop network-manager-openvpn-gnome \
-    wireguard aptitude net-tools
+    wireguard aptitude net-tools curl
   apt-get install -y -qq linux-headers-"$(dpkg --print-architecture)"\
     dkms make gcc
   apt-get install -y -qq linux-headers-"$(uname -r)"
