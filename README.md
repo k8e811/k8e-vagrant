@@ -24,6 +24,8 @@ Vagrant box with wireguard, openvpn and GUI
 * Put passcode and config in directory that becomes /vagrant directory
 * Import an existing config
 * Set perms to global afterwards
+* Will need 'sudo route delete default eth0'
+* May need 'sudo route add default <public network gateway>'
 
 ### Wireguard
 
