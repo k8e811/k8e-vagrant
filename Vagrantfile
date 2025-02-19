@@ -93,7 +93,7 @@ Vagrant.configure("2") do |config|
   export DEBCONF_NONINTERACTIVE_SEEN="true"
   apt-get update
   apt-get install -y -qq zstd lxqt task-xfce-desktop network-manager-openvpn-gnome \
-    wireguard aptitude net-tools curl
+    wireguard aptitude net-tools curl pass
   apt-get install -y -qq linux-headers-"$(dpkg --print-architecture)"\
     dkms make gcc
   apt-get install -y -qq linux-headers-"$(uname -r)"
