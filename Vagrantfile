@@ -89,12 +89,15 @@ Vagrant.configure("2") do |config|
   export DEBIAN_FRONTEND="noninteractive"
   export DEBCONF_NONINTERACTIVE_SEEN="true"
   apt-get update
-  apt-get install -y -qq zstd task-xfce-desktop network-manager-openvpn-gnome wireguard aptitude 
+  apt-get install -y -qq zstd task-xfce-desktop network-manager-openvpn-gnome \
+    wireguard aptitude net-tools
   apt-get install -y -qq linux-headers-"$(dpkg --print-architecture)" dkms make gcc
   aptitude -y full-upgrade
   mkdir -p /vbg
   mount -r /dev/sr1 /vbg
   /vbg/VBoxLinuxAdditions.run --nox11
   /sbin/rcvboxadd quicksetup all
+  adduser vagrant netdev
+
   SHELL
 end
