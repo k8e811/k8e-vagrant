@@ -26,3 +26,7 @@ Vagrant box with wireguard, openvpn and GUI
 * Set perms to global afterwards
 
 ### Wireguard
+
+## Todo
+
+* UDP OpenVPN fails on some nat + Virtualbox configurations (Maybe all) revisit.
