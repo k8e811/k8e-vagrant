@@ -28,6 +28,8 @@ Vagrant box with wireguard, openvpn and GUI
 
 ### Wireguard
 
+* Obtain wireguard config from Proton (Or other provider)
+* ```nmcli connection import type wireguard file $conf```
+
 ## Todo
 
-* UDP OpenVPN fails on some nat + Virtualbox configurations (Maybe all) revisit.
